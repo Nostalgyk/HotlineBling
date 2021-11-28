@@ -1,0 +1,3 @@
+# HotlineBling
+
+I'm developing this project for my college graduation, and posteliorly to launch on the web to other people use...
