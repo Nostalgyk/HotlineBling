@@ -45,7 +45,9 @@ export default function NewTransaction() {
     <div className="new-transaction-container">
       <div className="content">
         <section>
-          <img src={logoImg} alt="Be The Hero" />
+          <Link to="/">
+            <img src={logoImg} alt="Be The Hero" />
+          </Link>
 
           <h1>Cadastrar nova transação</h1>
           <p>Preencha as informações referente à transação.</p>

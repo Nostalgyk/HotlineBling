@@ -50,12 +50,14 @@ export default function Register() {
     <div className="register-container">
       <div className="content">
         <section>
-          <img src={logoImg} alt="Be The Hero" />
+          <Link to="/">
+            <img src={logoImg} alt="Be The Hero" />
+          </Link>
 
           <h1>Cadastro</h1>
           <p>
             Faça seu cadastro, entre na plataforma e comece a gerenciar melhor e
-            mais inteligentemente suas despesas!
+            de forma mais inteligente suas despesas!
           </p>
 
           <Link className="back-link" to="/">
