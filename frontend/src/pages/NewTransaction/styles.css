@@ -1,4 +1,4 @@
-.new-incident {
+.new-transaction-container {
   width: 100%;
   max-width: 1120px;
   height: 100vh;
@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.new-incident .content {
+.new-transaction-container .content {
   width: 100%;
   padding: 96px;
   background: #f0f0f5;
@@ -20,36 +20,37 @@
   align-items: center;
 }
 
-.new-incident .content section {
+.new-transaction-container .content section {
   width: 100%;
   max-width: 380px;
 }
 
-.new-incident .content section h1 {
+.new-transaction-container .content section h1 {
   margin: 64px 0 32px;
   font-size: 32px;
 }
 
-.new-incident .content section p {
+.new-transaction-container .content section p {
   font-size: 18px;
   color: #737380;
   line-height: 32px;
 }
 
-.new-incident .content form {
+.new-transaction-container .content form {
   width: 100%;
   max-width: 450px;
 }
 
-.new-incident .content form input {
+.new-transaction-container .content form input,
+.new-transaction-container .content form textarea {
   margin-top: 8px;
   font-size: 15px;
 }
 
-.new-incident .content form .input-group {
+.new-transaction-container .content form .input-group {
   display: flex;
 }
 
-.new-incident .content form .input-group input + input {
+.new-transaction-container .content form .input-group input + input {
   margin-left: 8px;
 }
