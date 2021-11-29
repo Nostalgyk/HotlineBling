@@ -6,11 +6,12 @@ import api from '../../services/api';
 
 import './styles.css';
 
-import logoImg from '../../assets/logo.svg';
-import herosImg from '../../assets/heroes.png';
+import logoImg from '../../assets/logoF.png';
+import herosImg from '../../assets/coin.png';
 
 export default function Logon() {
   const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
   const history = useHistory();
 
   async function handleLogin(e) {
@@ -20,6 +21,7 @@ export default function Logon() {
       const response = await api.post('sessions', { id });
 
       localStorage.setItem('userId', id);
+      localStorage.setItem('userPass', password);
       localStorage.setItem('userName', response.data.name);
 
       history.push('/profile');
@@ -32,7 +34,7 @@ export default function Logon() {
     <div className="logon-container">
       <section className="form">
         <Link to="/">
-          <img src={logoImg} alt="Be The Hero" />
+          <img src={logoImg} alt="Hotline Billing" />
         </Link>
 
         <form onSubmit={handleLogin}>
@@ -42,17 +44,25 @@ export default function Logon() {
             value={id}
             onChange={e => setId(e.target.value)}
           />
+          <input
+            type="password"
+            placeholder="Sua senha"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
           <button className="button" type="submit">
             Entrar
           </button>
 
           <Link className="back-link" to="/register">
-            <FiLogIn size={16} color="#E02041" />
+            <FiLogIn size={16} color="#9e06ff" />
             Não tenho cadastro
           </Link>
         </form>
       </section>
-      <img src={herosImg} alt="Heroes" />
+      <div className="logon-image-container">
+        <img src={herosImg} alt="Heroes" />
+      </div>
     </div>
   );
 }

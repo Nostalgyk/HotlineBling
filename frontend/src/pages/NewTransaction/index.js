@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logoF.png';
 
 import './styles.css';
 
@@ -46,14 +46,14 @@ export default function NewTransaction() {
       <div className="content">
         <section>
           <Link to="/">
-            <img src={logoImg} alt="Be The Hero" />
+            <img src={logoImg} alt="Hotline Billing" />
           </Link>
 
           <h1>Cadastrar nova transação</h1>
           <p>Preencha as informações referente à transação.</p>
 
           <Link className="back-link" to="/profile">
-            <FiArrowLeft size={16} color="#E02041" />
+            <FiArrowLeft size={16} color="#9e06ff" />
             Voltar para Home
           </Link>
         </section>

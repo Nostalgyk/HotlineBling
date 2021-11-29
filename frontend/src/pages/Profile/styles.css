@@ -42,6 +42,7 @@
 .profile-container h1 {
   margin-top: 80px;
   margin-bottom: 24px;
+  color: #41414d;
 }
 
 .profile-container ul {
@@ -60,7 +61,7 @@
 
 .profile-container ul li button {
   position: absolute;
-  right: 24px;
+  right: 50px;
   top: 24px;
   border: 0;
   background: transparent;
@@ -68,6 +69,14 @@
 
 .profile-container ul li button:hover {
   opacity: 0.8;
+}
+
+.profile-container ul li button + button {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  border: 0;
+  background: transparent;
 }
 
 .profile-container ul li strong {

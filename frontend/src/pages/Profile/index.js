@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { FiPower, FiTrash2, FiEdit } from 'react-icons/fi';
 
 import api from '../../services/api';
 
 import './styles.css';
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logoF.png';
 
 export default function Profile() {
   const [transactions, setTransactions] = useState([]);
@@ -52,7 +52,7 @@ export default function Profile() {
     <div className="profile-container">
       <header>
         <Link to="/">
-          <img src={logoImg} alt="Be The Hero" />
+          <img src={logoImg} alt="Hotline Billing" />
         </Link>
         <span>Bem vindo(a), {userName}!</span>
 
@@ -60,7 +60,7 @@ export default function Profile() {
           Cadastrar nova transação
         </Link>
         <button onClick={handleLogout} type="button">
-          <FiPower size={18} color="#E02041" />
+          <FiPower size={18} color="#9e06ff" />
         </button>
       </header>
 
@@ -85,6 +85,12 @@ export default function Profile() {
             <strong>CATEGORIA:</strong>
             <p>{transactions.category}</p>
 
+            <button
+              // onClick={() => handleEditTransaction(transactions.id)}
+              type="button"
+            >
+              <FiEdit size={20} color="#a8a8b3" />
+            </button>
             <button
               onClick={() => handleDeleteTransaction(transactions.id)}
               type="button"
