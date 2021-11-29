@@ -9,7 +9,7 @@ module.exports = {
   },
 
   async create(request, response) {
-    const { name, age, email, whatsapp, city, uf, salary, office } =
+    const { name, password, age, email, whatsapp, city, uf, salary, office } =
       request.body;
 
     const id = crypto.randomBytes(4).toString('HEX');
@@ -17,6 +17,7 @@ module.exports = {
     await connection('users').insert({
       id,
       name,
+      password,
       age,
       email,
       whatsapp,

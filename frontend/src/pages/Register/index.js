@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiEye } from 'react-icons/fi';
 
 import api from '../../services/api';
 import './styles.css';
@@ -9,6 +9,7 @@ import logoImg from '../../assets/logoF.png';
 
 export default function Register() {
   const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
   const [age, setAge] = useState('');
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
@@ -16,6 +17,10 @@ export default function Register() {
   const [uf, setUf] = useState('');
   const [salary, setSalary] = useState('');
   const [office, setOffice] = useState('');
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   const history = useHistory();
 
@@ -24,6 +29,7 @@ export default function Register() {
 
     const data = {
       name,
+      password,
       age,
       email,
       whatsapp,
@@ -40,7 +46,7 @@ export default function Register() {
         `Cadastro realizado com sucesso! Sua ID de acesso: ${response.data.id}`
       );
 
-      history.push('/');
+      history.push('/profile');
     } catch (err) {
       alert('Erro no cadastro. Revise os dados e tente novamente.');
     }
@@ -69,22 +75,38 @@ export default function Register() {
           <input
             placeholder="Seu nome"
             value={name}
+            required="true"
             onChange={e => setName(e.target.value)}
           />
+          <div id="pass">
+            <input
+              placeholder="Sua senha"
+              value={password}
+              type={passwordShown ? 'text' : 'password'}
+              required="true"
+              onChange={e => setPassword(e.target.value)}
+            />
+            <button id="eye" onClick={togglePassword}>
+              <FiEye size={20} color="#a8a8b6" />
+            </button>
+          </div>
           <input
             placeholder="Sua idade"
             value={age}
+            required="true"
             onChange={e => setAge(e.target.value)}
           />
           <input
             type="email"
             placeholder="Seu e-mail"
             value={email}
+            required="true"
             onChange={e => setEmail(e.target.value)}
           />
           <input
             placeholder="Whatsapp"
             value={whatsapp}
+            required="true"
             onChange={e => setWhatsapp(e.target.value)}
           />
 
@@ -92,11 +114,14 @@ export default function Register() {
             <input
               placeholder="Cidade"
               value={city}
+              required="true"
               onChange={e => setCity(e.target.value)}
             />
             <input
               placeholder="UF"
               value={uf}
+              required="true"
+              maxLength="2"
               onChange={e => setUf(e.target.value)}
               style={{ width: 80 }}
             />
@@ -106,11 +131,13 @@ export default function Register() {
             <input
               placeholder="Salário"
               value={salary}
+              required="true"
               onChange={e => setSalary(e.target.value)}
             />
             <input
               placeholder="Ocupação"
               value={office}
+              required="true"
               onChange={e => setOffice(e.target.value)}
             />
           </div>

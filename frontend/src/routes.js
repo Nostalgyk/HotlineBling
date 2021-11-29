@@ -5,6 +5,7 @@ import Logon from './pages/Logon';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import NewTransaction from './pages/NewTransaction';
+import ChangeTransaction from './pages/ChangeTransaction';
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
 
         <Route path="/profile" component={Profile} />
         <Route path="/transactions/new" component={NewTransaction} />
+        <Route path="/transactions/change" component={ChangeTransaction} />
       </Switch>
     </BrowserRouter>
   );

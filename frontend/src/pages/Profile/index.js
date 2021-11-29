@@ -38,7 +38,7 @@ export default function Profile() {
         transactions.filter(transactions => transactions.id !== id)
       );
     } catch (err) {
-      alert('Erro ao deletar caso, tente novamente.');
+      alert('Erro ao deletar transação, tente novamente.');
     }
   }
 
@@ -85,11 +85,10 @@ export default function Profile() {
             <strong>CATEGORIA:</strong>
             <p>{transactions.category}</p>
 
-            <button
-              // onClick={() => handleEditTransaction(transactions.id)}
-              type="button"
-            >
-              <FiEdit size={20} color="#a8a8b3" />
+            <button type="button">
+              <Link to="/transactions/change">
+                <FiEdit size={20} color="#a8a8b3" />
+              </Link>
             </button>
             <button
               onClick={() => handleDeleteTransaction(transactions.id)}

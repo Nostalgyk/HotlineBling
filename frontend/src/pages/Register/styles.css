@@ -46,6 +46,19 @@
   font-size: 15px;
 }
 
+.register-container .content form #pass {
+  display: flex;
+}
+.register-container .content form #pass input {
+  width: 95%;
+}
+
+.register-container .content form #eye {
+  background: transparent;
+  border: none;
+  margin: 10px 10px 0px 10px;
+}
+
 .register-container .content form .input-group {
   display: flex;
 }

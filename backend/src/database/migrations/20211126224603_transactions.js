@@ -10,11 +10,9 @@ exports.up = function (knex) {
 
     //relationship
     table.string('user_id').notNullable();
-    table.string('user_password').notNullable();
 
     //foreign key
     table.foreign('user_id').references('id').inTable('users');
-    table.foreign('user_password').references('password').inTable('users');
   });
 };
 
