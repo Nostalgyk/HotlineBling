@@ -51,9 +51,7 @@ export default function Profile() {
   return (
     <div className="profile-container">
       <header>
-        <Link to="/">
-          <img src={logoImg} alt="Hotline Billing" />
-        </Link>
+        <img src={logoImg} alt="Hotline Billing" />
         <span>Bem vindo(a), {userName}!</span>
 
         <Link className="button" to="/transactions/new">

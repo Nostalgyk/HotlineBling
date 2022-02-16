@@ -46,7 +46,8 @@ export default function Register() {
         `Cadastro realizado com sucesso! Sua ID de acesso: ${response.data.id}`
       );
 
-      history.push('/profile');
+      localStorage.setItem('userId', response.data.id);
+      history.push('/');
     } catch (err) {
       alert('Erro no cadastro. Revise os dados e tente novamente.');
     }

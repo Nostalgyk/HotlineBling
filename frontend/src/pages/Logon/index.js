@@ -20,7 +20,6 @@ export default function Logon() {
     try {
       const response = await api.post('sessions', { id, password });
 
-      localStorage.setItem('userId', id);
       localStorage.setItem('userPass', password);
       localStorage.setItem('userName', response.data.name);
 
